@@ -78,7 +78,7 @@ class Efectivo inherits FormaDePago {
 
     override method pagar(cosa) {
         if(self.puedePagar(cosa)) {
-            cantidad = cantidad - cosa.valor()
+            cantidad = cantidad - cosa.valorActual()
             cosa.estaPagada(true)
         }
     }
@@ -93,7 +93,7 @@ class Debito inherits FormaDePago{
 
     override method pagar(cosa) {
         if(self.puedePagar(cosa)){
-            cuentaBancaria.cantidadDinero(cuentaBancaria.cantidadDinero() - cosa.valor())
+            cuentaBancaria.cantidadDinero(cuentaBancaria.cantidadDinero() - cosa.valorActual())
             cosa.estaPagada(true)
         } 
     }
@@ -132,16 +132,13 @@ class Credito inherits FormaDePago {
 }
 
 
-
-//acomodar lo de la herencia
-
+//esta clase la podria sacar y agregarle los atributos a la clase Credito directamente
 class Banco {
     var property maximoPerimitido
 
     var property tasaDeInteres
 }
 
-//const persona = new Persona(formasDePago = [], formaDePagoPreferida = new Efectivo(cantidad = 100), cosas = "teclado")
 
 class CompradorCompulsivo inherits Persona{
     override method comprar(cosa){

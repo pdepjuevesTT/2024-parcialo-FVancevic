@@ -5,7 +5,8 @@ class Persona {
     var trabajo
     var cuentaBancaria
     var mesActual = 0
-    //podria agregar algo de dinero circulante para cuando se cobra y que se use es para pagar las cosas y el dinero restante lo guarde en efectivo.cantidad(dineroRestante), es facil
+    //podria agregar algo de dinero circulante para cuando se cobra y que se use es para pagar las cosas y el dinero restante lo guarde en efectivo.cantidad(dineroRestante)
+    //solamente tendria que pasarle a los metodos correspondientes el dineroCirculante y acomodar la logica, que es facil, pero no tengo tiempo
 
     method comprar(cosa) {
         self.pagar(cosa)
